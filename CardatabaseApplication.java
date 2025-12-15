@@ -8,7 +8,7 @@ import  org.slf4j.LoggerFactory; // for  login authentication
 @SpringBootApplication
 public class CardatabaseApplication {
 
-    // mkaing the Logger class object
+    // making the Logger class object
     private static final Logger logger = LoggerFactory.getLogger(CardatabaseApplication.class);
 
 	public static void main(String[] args) {
@@ -18,6 +18,19 @@ public class CardatabaseApplication {
 
         //logger.info() prints message to console
         logger.info("Application Started");
+
+                // Create the dependency
+                OwnerService reliableOwner = new HumanOwner();
+
+                // Inject the dependency into the client via the constructor
+                Car myCar = new Car(reliableOwner);
+
+                myCar.startJourney();
+
+
     }
 
-}
+
+    }
+
+
